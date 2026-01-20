@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEKA - Crushing & Screening Plant Request For Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/proxima-nova" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #0056b3;
+            /* Meka Blue */
+            --accent: #ffb400;
+            /* Meka Yellow/Gold */
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --border: #dee2e6;
+            --input-bg: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --section-indicator: #ff9f43;
+            --section-bg: #fffbf5;
+            /* Very Light Orange */
+            --header-bg: #fff3e6;
+            /* Soft Header Orange */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Proxima Nova', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(0, 86, 179, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 180, 0, 0.03) 0%, transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        header {
+            background: var(--primary);
+            padding: 15px 0;
+            margin-bottom: 15px;
+            border-bottom: 5px solid var(--accent);
+            width: 100%;
+        }
+
+        .header-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Proxima Nova', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .main-title {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .sub-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .form-section {
+            background: var(--section-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            border-left: 4px solid var(--section-indicator);
+            padding-left: 10px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 8px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-main);
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .required-star {
+            color: #d63031;
+            font-weight: bold;
+            margin-left: 4px;
+        }
+
+        /* Keep the old rule only for simple labels that don't use the span method yet */
+        label.required::after {
+            content: " *";
+            color: #d63031;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            max-width: 100%;
+            padding: 5px 8px;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-main);
+            font-size: 0.78rem;
+            transition: all 0.2s;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            padding: 5px 8px;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-main);
+            font-size: 0.78rem;
+            transition: all 0.2s;
+            resize: none;
+            min-height: 50px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+            outline: none;
+        }
+
+        /* Prevent autofill blue background */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            -webkit-text-fill-color: var(--text-main);
+            -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            padding: 5px 8px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            transition: all 0.2s;
+            background: #fff;
+            font-size: 0.8rem;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--secondary);
+            background: rgba(0, 86, 179, 0.02);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 17px;
+            height: 17px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            background: #fff;
+            flex-shrink: 0;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked {
+            background: var(--secondary);
+            border-color: var(--secondary);
+        }
+
+        .checkbox-item input[type="checkbox"]:checked::after {
+            content: '✓';
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .checkbox-item.selected {
+            border-color: var(--secondary);
+            background: rgba(0, 86, 179, 0.05);
+        }
+
+        /* Hover Preview Styles */
+        .checkbox-item.has-preview {
+            position: relative;
+        }
+
+        .preview-image {
+            position: absolute;
+            left: 105%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            /* Reduced by ~40% for more compact look */
+            z-index: 1000;
+            background: #fff;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            pointer-events: none;
+            border: 1px solid var(--border);
+        }
+
+        .preview-image img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .checkbox-item.has-preview:hover .preview-image {
+            opacity: 1;
+            visibility: visible;
+            left: 108%;
+        }
+
+        @media (max-width: 900px) {
+            .preview-image {
+                width: 250px;
+                left: 0;
+                top: 110%;
+                transform: none;
+            }
+
+            .checkbox-item.has-preview:hover .preview-image {
+                left: 0;
+                top: 105%;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: #fff;
+        }
+
+        th {
+            background: var(--header-bg);
+            color: var(--primary);
+            padding: 6px;
+            font-size: 0.68rem;
+            text-align: center;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        th span.unit,
+        .header-label span.unit,
+        label span.unit {
+            text-transform: none;
+            text-transform: lowercase;
+            font-weight: 500;
+        }
+
+        th span.subtitle {
+            display: block;
+            font-size: 0.65rem;
+            color: #ef6c00;
+            /* Meka Orange/Amber */
+            text-transform: none;
+            font-weight: 400;
+            margin-top: 4px;
+            letter-spacing: 0;
+        }
+
+        .subtitle-inline {
+            font-size: 0.7rem;
+            color: #ef6c00;
+            text-transform: none;
+            font-weight: 500;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .header-label {
+            display: block;
+            background: var(--header-bg);
+            color: var(--primary);
+            padding: 6px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            margin-bottom: 0 !important;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 4px 6px;
+            border: 1px solid var(--border);
+            font-size: 0.78rem;
+            color: var(--text-main);
+        }
+
+        table tbody tr td:first-child {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .feeding-table thead td {
+            border-bottom: none;
+        }
+
+        .feeding-table tbody td {
+            border-top: none;
+        }
+
+        table input,
+        table select,
+        input[name="max_feed_size"],
+        input[name="spec_density"],
+        input[name="bulk_density"],
+        input[name="impact_index"],
+        input[name="abrasion_index"],
+        input[name="moisture"] {
+            text-align: center;
+            font-size: 0.78rem;
+        }
+
+        table input,
+        table select {
+            border: 1px solid #e9ecef !important;
+            padding: 5px 3px !important;
+            /* Reduced horizontal padding */
+            width: 100%;
+            box-sizing: border-box;
+            /* Ensure padding doesn't expand width */
+            border-radius: 4px;
+            background: #fdfdfd;
+            transition: all 0.2s;
+            font-size: 0.8rem;
+            color: var(--text-main);
+            text-align: center;
+            /* Center the values */
+        }
+
+        table input:focus,
+        table select:focus {
+            border-color: var(--secondary) !important;
+            background: #fff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+        }
+
+        /* Remove arrows from number inputs */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #004494;
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2);
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        @media print {
+            @page {
+                margin: 1.5cm;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+                zoom: 0.70;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .switcher-container,
+            .actions {
+                display: none !important;
+            }
+
+            header {
+                display: block !important;
+                margin-bottom: 12px !important;
+                padding: 10px 0 !important;
+                background: var(--primary) !important;
+                border-bottom: 5px solid var(--accent) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                width: 100% !important;
+            }
+
+            .header-content {
+                max-width: 100% !important;
+                padding: 0 10px !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+
+            .logo {
+                font-family: 'Proxima Nova', sans-serif !important;
+                font-size: 2.5rem !important;
+                font-weight: 800 !important;
+                color: #fff !important;
+                border: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                letter-spacing: 2px !important;
+                line-height: 1 !important;
+            }
+
+            .form-section {
+                box-shadow: none !important;
+                border: 1px solid #cbd5e1 !important;
+                background: var(--section-bg) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                margin-bottom: 15px !important;
+                padding: 15px !important;
+                page-break-inside: auto !important;
+            }
+
+            .feeding-size-container {
+                page-break-inside: avoid !important;
+                display: block !important;
+            }
+
+            .section-title {
+                page-break-after: avoid !important;
+            }
+
+            .grid-2 {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 10px !important;
+                page-break-inside: avoid !important;
+            }
+
+            .input-group {
+                margin-bottom: 8px !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Ensure long textareas take full width if they are outside a grid-2 or deliberate */
+            textarea[name="address"],
+            textarea[name="current_status_needs"],
+            textarea[name="comments"] {
+                width: 100% !important;
+            }
+
+            input::placeholder,
+            textarea::placeholder {
+                color: transparent !important;
+            }
+
+            input,
+            textarea,
+            select {
+                border: 1px solid #ddd !important;
+                background: #ffffff !important;
+                padding: 5px 10px !important;
+                font-size: 0.85rem !important;
+                color: #000 !important;
+                border-radius: 4px !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Force remove autofill color in print */
+            input:-webkit-autofill,
+            textarea:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+                -webkit-text-fill-color: #000 !important;
+            }
+
+            .checkbox-group {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 5px !important;
+            }
+
+            .checkbox-item {
+                border: 1px solid #eee !important;
+                background: #fff !important;
+                padding: 4px 8px !important;
+                border-radius: 4px !important;
+                font-size: 0.78rem !important;
+            }
+
+            .header-label,
+            th {
+                background: var(--header-bg) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color: #0f172a !important;
+                border: 1px solid #cbd5e1 !important;
+            }
+
+            .unit {
+                color: #444 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .print-header-line,
+            .print-footer-line {
+                display: block !important;
+                position: fixed;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: var(--primary) !important;
+                z-index: 9999;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .print-header-line {
+                top: 0;
+            }
+
+            .print-footer-line {
+                bottom: 0;
+            }
+        }
+
+        .print-header-line,
+        .print-footer-line {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .grid-2.divider {
+            gap: 20px;
+        }
+
+        .grid-2.divider>div:first-child {
+            border-right: 1px solid var(--border);
+            padding-right: 20px;
+        }
+
+        @media (max-width: 768px) {
+
+            .grid-2,
+            .grid-2.divider {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .grid-2.divider>div:first-child {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+        }
+
+        /* Language & Unit Switcher Styles */
+        .switcher-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .lang-switcher,
+        .unit-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .lang-btn,
+        .unit-btn {
+            padding: 4px 10px;
+            border: 1px solid var(--border);
+            background: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .lang-btn:hover,
+        .unit-btn:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .lang-btn.active,
+        .unit-btn.active {
+            background: var(--secondary);
+            color: #fff;
+            border-color: var(--secondary);
+        }
+
+        /* RTL Support for Arabic */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .section-title {
+            border-left: none;
+            border-right: 4px solid var(--secondary);
+            padding-left: 0;
+            padding-right: 15px;
+        }
+
+        [dir="rtl"] th {
+            text-align: right;
+        }
+
+        [dir="rtl"] .grid-2.divider>div:first-child {
+            border-right: none;
+            border-left: 1px solid var(--border);
+            padding-right: 0;
+            padding-left: 40px;
+        }
+
+        [dir="rtl"] .actions {
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+
+<body dir="ltr">
+    <div class="print-header-line"></div>
+    <div class="print-footer-line"></div>
+    <header>
+        <div class="header-content">
+            <div class="logo">MEKA</div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="switcher-container">
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn active" onclick="setLanguage('en')">🇬🇧 English</button>
+                <button type="button" class="lang-btn" onclick="setLanguage('tr')">🇹🇷 Türkçe</button>
+                <button type="button" class="lang-btn" onclick="setLanguage('fr')">🇫🇷 Français</button>
+                <button type="button" class="lang-btn" onclick="setLanguage('es')">🇪🇸 Español</button>
+                <button type="button" class="lang-btn" onclick="setLanguage('ar')">🇸🇦 العربية</button>
+            </div>
+            <div class="unit-switcher">
+                <button type="button" class="unit-btn active" onclick="setUnitSystem('metric')">📏 Metric</button>
+                <button type="button" class="unit-btn" onclick="setUnitSystem('imperial')">📏 Imperial</button>
+            </div>
+        </div>
+
+        <form id="proposalForm">
+            <!-- Customer Section -->
+            <section class="form-section">
+                <div class="section-title" data-i18n="sec_customer">Customer Details</div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label class="required" data-i18n="lbl_company">Company Name</label>
+                        <input type="text" name="company" required>
+                    </div>
+                    <div class="input-group">
+                        <label data-i18n="lbl_project_name">Project Name</label>
+                        <input type="text" name="project_name">
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label class="required" data-i18n="lbl_responsible">Contact Name</label>
+                        <input type="text" name="responsible" required>
+                    </div>
+                    <div class="input-group">
+                        <label class="required" data-i18n="lbl_phone">Phone / WhatsApp</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label data-i18n="lbl_location">Site Location</label>
+                    <input type="text" name="location">
+                </div>
+                <div class="input-group">
+                    <label class="required" data-i18n="lbl_email">Email Address</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label data-i18n="lbl_address">Full Address</label>
+                    <textarea name="address" rows="2" style="overflow: hidden;" data-max-lines="2"></textarea>
+                </div>
+            </section>
+
+            <!-- Project Type & Mobility -->
+            <section class="form-section">
+                <div class="section-title" data-i18n="sec_scope">Project Scope & Mobility</div>
+                <div class="grid-2 divider">
+                    <div class="input-group">
+                        <label class="header-label required" data-i18n="lbl_project_type">Project Type</label>
+                        <div
+                            style="border: 1px solid var(--border); border-top: none; padding: 20px; background: #fff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                            <div class="checkbox-group single-select-group required-group"
+                                data-group-name="Project Type" data-i18n-group="Project Type"
+                                style="grid-template-columns: 1fr; margin-bottom: 0;">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="project_type" value="New"> <span
+                                        data-i18n="val_new_plant">New Plant</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="project_type" value="Extension"> <span
+                                        data-i18n="val_extension">Plant Extension</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="project_type" value="Renewal"> <span
+                                        data-i18n="val_renewal">Plant Renewal</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="header-label required" data-i18n="lbl_mobility">Project Mobility</label>
+                        <div
+                            style="border: 1px solid var(--border); border-top: none; padding: 20px; background: #fff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                            <div class="checkbox-group single-select-group required-group"
+                                data-group-name="Project Mobility" data-i18n-group="Project Mobility"
+                                style="grid-template-columns: 1fr; margin-bottom: 0;">
+                                <label class="checkbox-item has-preview">
+                                    <input type="checkbox" name="mobility" value="Stationary"> <span
+                                        data-i18n="val_stationary">Stationary</span>
+                                    <div class="preview-image">
+                                        <img src="images/stationary.jpg" alt="Stationary Preview">
+                                    </div>
+                                </label>
+                                <label class="checkbox-item has-preview">
+                                    <input type="checkbox" name="mobility" value="Mobile"> <span
+                                        data-i18n="val_mobile">Mobile-Wheeled</span>
+                                    <div class="preview-image">
+                                        <img src="images/mobile-wheeled.jpg" alt="Mobile-Wheeled Preview">
+                                    </div>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="mobility" value="Skid"> <span data-i18n="val_skid">Skid
+                                        Mounted</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Feed Material -->
+            <section class="form-section">
+                <div class="section-title required" data-i18n="sec_feed">Feed Material Characteristics</div>
+                <div class="checkbox-group single-select-group required-group" data-group-name="Feed Material"
+                    data-i18n-group="Feed Material" style="margin-bottom: 20px;">
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Granite"> <span
+                            data-i18n="val_granite">Granite</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Limestone"> <span
+                            data-i18n="val_limestone">Limestone</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Gabbro"> <span
+                            data-i18n="val_gabbro">Gabbro</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Quartzite"> <span
+                            data-i18n="val_quartzite">Quartzite</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Sandstone"> <span
+                            data-i18n="val_sandstone">Sandstone</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Dolomite"> <span
+                            data-i18n="val_dolomite">Dolomite</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Diabase"> <span
+                            data-i18n="val_diabase">Diabase</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Marble"> <span
+                            data-i18n="val_marble">Marble</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Andesite"> <span
+                            data-i18n="val_andesite">Andesite</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="Coal"> <span
+                            data-i18n="val_coal">Coal</span></label>
+                    <label class="checkbox-item"><input type="checkbox" name="material" value="River Gravel"> <span
+                            data-i18n="val_river_gravel">River Gravel</span></label>
+                </div>
+                <div class="input-group" style="margin-top: 10px;">
+                    <label data-i18n="lbl_other_material">Other material (Please specify)</label>
+                    <input type="text" name="other_material">
+                </div>
+
+                <div class="grid-2 divider" style="margin-top: 25px; align-items: start;">
+                    <div>
+                        <div style="overflow-x: auto;">
+                            <table style="margin-top: 0;">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="th_tech_param">Technical Parameter</th>
+                                        <th data-i18n="th_value">Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span data-i18n="td_spec_density">Specific Density</span> <span class="unit"
+                                                data-unit="density">(t/m³)</span></td>
+                                        <td><input type="text" name="spec_density"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span data-i18n="td_bulk_density">Bulk Density</span> <span class="unit"
+                                                data-unit="density">(t/m³)</span></td>
+                                        <td><input type="text" name="bulk_density"></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="td_impact_index">Impact Work Index (Bond)</td>
+                                        <td><input type="text" name="impact_index"></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="td_abrasion_index">Abrasion Index</td>
+                                        <td><input type="text" name="abrasion_index"></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="td_moisture">Moisture % by Weight</td>
+                                        <td><input type="text" name="moisture"></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="td_others">Others</td>
+                                        <td><input type="text" name="others_tech"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="input-group" style="margin-top: 25px;">
+                            <label class="header-label"><span data-i18n="lbl_max_feed">Max Feed Size</span>
+                                <span class="unit" data-unit="mm">(mm)</span><span
+                                    class="required-star">*</span></label>
+                            <div
+                                style="border: 1px solid var(--border); border-top: none; padding: 15px; background: #fff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                                <input type="text" name="max_feed_size" style="margin: 0;" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="input-group">
+                            <label class="header-label"><span data-i18n="lbl_extraction">Extraction Method</span><span
+                                    class="required-star">*</span></label>
+                            <div class="checkbox-group single-select-group required-group"
+                                data-group-name="Extraction Method"
+                                style="grid-template-columns: repeat(2, 1fr); border: 1px solid var(--border); border-top: none; padding: 20px; background: #fff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                                <label class="checkbox-item"><input type="checkbox" name="extraction" value="Blasting">
+                                    <span data-i18n="val_blasting">Blasting</span></label>
+                                <label class="checkbox-item"><input type="checkbox" name="extraction" value="Ripped">
+                                    <span data-i18n="val_ripped">Ripped</span></label>
+                                <label class="checkbox-item"><input type="checkbox" name="extraction" value="Recycling">
+                                    <span data-i18n="val_recycling">Recycling</span></label>
+                                <label class="checkbox-item"><input type="checkbox" name="extraction"
+                                        value="River Gravel">
+                                    <span data-i18n="val_river_gravel">River Gravel</span></label>
+                            </div>
+                        </div>
+
+                        <div class="input-group" style="margin-top: 25px;">
+                            <label class="header-label"><span data-i18n="lbl_condition">Feed Material
+                                    Condition</span><span class="required-star">*</span></label>
+                            <div
+                                style="border: 1px solid var(--border); border-top: none; padding: 12px; background: #fff; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                                <div class="checkbox-group single-select-group required-group"
+                                    data-group-name="Feed Material Condition"
+                                    style="grid-template-columns: repeat(2, 1fr); margin-bottom: 8px;">
+                                    <label class="checkbox-item"><input type="checkbox" name="condition" value="Wet">
+                                        <span data-i18n="val_wet">Wet</span></label>
+                                    <label class="checkbox-item"><input type="checkbox" name="condition" value="Dry">
+                                        <span data-i18n="val_dry">Dry</span></label>
+                                    <label class="checkbox-item"><input type="checkbox" name="condition" value="Clayed">
+                                        <span data-i18n="val_clayed">Clayed</span></label>
+                                    <label class="checkbox-item"><input type="checkbox" name="condition" value="Sticky">
+                                        <span data-i18n="val_sticky">Sticky</span></label>
+                                </div>
+                                <label data-i18n="lbl_comments"
+                                    style="display: block; margin-bottom: 3px; font-size: 0.78rem; font-weight: 600; color: var(--text-main);">Comments</label>
+                                <textarea name="feed_comments" rows="2"
+                                    style="width: 100%; padding: 5px 8px; border: 1px solid var(--border); border-radius: 4px; resize: none; font-size: 0.78rem; overflow: hidden;"
+                                    data-max-lines="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feeding-size-container" style="overflow-x: auto; margin-top: 25px;">
+                    <label class="header-label">
+                        <span data-i18n="lbl_feed_dist">Feeding Size Distribution</span>
+                        <span class="subtitle-inline" data-i18n="sub_if_available">(If available)</span>
+                    </label>
+                    <table class="feeding-table" style="margin-top: 0;">
+                        <thead>
+                            <tr>
+                                <th style="font-size: 0.75rem; min-width: 100px;"><span data-i18n="th_mesh">Hole
+                                        Size</span>
+                                    <span class="unit" data-unit="mm">(mm)</span>
+                                </th>
+                                <td><input type="text" name="h1"></td>
+                                <td><input type="text" name="h2"></td>
+                                <td><input type="text" name="h3"></td>
+                                <td><input type="text" name="h4"></td>
+                                <td><input type="text" name="h5"></td>
+                                <td><input type="text" name="h6"></td>
+                                <td><input type="text" name="h7"></td>
+                                <td><input type="text" name="h8"></td>
+                                <td><input type="text" name="h9"></td>
+                                <td><input type="text" name="h10"></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th style="font-size: 0.75rem; min-width: 100px;"><span
+                                        data-i18n="th_passing">Passing</span> <span class="unit">(%)</span>
+                                </th>
+                                <td><input type="text" name="p1"></td>
+                                <td><input type="text" name="p2"></td>
+                                <td><input type="text" name="p3"></td>
+                                <td><input type="text" name="p4"></td>
+                                <td><input type="text" name="p5"></td>
+                                <td><input type="text" name="p6"></td>
+                                <td><input type="text" name="p7"></td>
+                                <td><input type="text" name="p8"></td>
+                                <td><input type="text" name="p9"></td>
+                                <td><input type="text" name="p10"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Final Product Details -->
+            <section class="form-section">
+                <div class="section-title" data-i18n="sec_final">
+                    Required Final Products
+                    <span class="subtitle-inline" data-i18n="sub_specify_size"
+                        style="font-size: 0.8rem; letter-spacing: 0;">Please specify required final product size</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="hide-if-empty">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th_prod_name">Product Name</th>
+                                <th><span data-i18n="th_size">Size</span> <span class="unit" data-unit="mm">(mm)</span>
+                                </th>
+                                <th><span data-i18n="th_capacity">Capacity</span> <span class="unit"
+                                        data-unit="capacity">(mtph)</span><span class="subtitle"
+                                        data-i18n="sub_available">Please add the
+                                        values if available</span></th>
+                                <th><span data-i18n="th_percentage">Percentage</span> (%)<span class="subtitle"
+                                        data-i18n="sub_available">Please add the values if available</span></th>
+                                <th><span data-i18n="th_shape">Quality of Product</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span data-i18n="val_prod">Product</span> 1 <span style="color: #d63031;">*</span>
+                                </td>
+                                <td><input type="text" name="p1s" required></td>
+                                <td><input type="text" name="p1w"></td>
+                                <td><input type="text" name="p1p"></td>
+                                <td>
+                                    <select name="p1sh">
+                                        <option value="Not Required" data-i18n="val_not_required">Not Required</option>
+                                        <option value="Required" data-i18n="val_required">Required</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span data-i18n="val_prod">Product</span> 2</td>
+                                <td><input type="text" name="p2s"></td>
+                                <td><input type="text" name="p2w"></td>
+                                <td><input type="text" name="p2p"></td>
+                                <td>
+                                    <select name="p2sh">
+                                        <option value="Not Required" data-i18n="val_not_required">Not Required</option>
+                                        <option value="Required" data-i18n="val_required">Required</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span data-i18n="val_prod">Product</span> 3</td>
+                                <td><input type="text" name="p3s"></td>
+                                <td><input type="text" name="p3w"></td>
+                                <td><input type="text" name="p3p"></td>
+                                <td>
+                                    <select name="p3sh">
+                                        <option value="Not Required" data-i18n="val_not_required">Not Required</option>
+                                        <option value="Required" data-i18n="val_required">Required</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span data-i18n="val_prod">Product</span> 4</td>
+                                <td><input type="text" name="p4s"></td>
+                                <td><input type="text" name="p4w"></td>
+                                <td><input type="text" name="p4p"></td>
+                                <td>
+                                    <select name="p4sh">
+                                        <option value="Not Required" data-i18n="val_not_required">Not Required</option>
+                                        <option value="Required" data-i18n="val_required">Required</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span data-i18n="val_prod">Product</span> 5</td>
+                                <td><input type="text" name="p5s"></td>
+                                <td><input type="text" name="p5w"></td>
+                                <td><input type="text" name="p5p"></td>
+                                <td>
+                                    <select name="p5sh">
+                                        <option value="Not Required" data-i18n="val_not_required">Not Required</option>
+                                        <option value="Required" data-i18n="val_required">Required</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="val_natural">Natural Fine</td>
+                                <td><input type="text" name="nfs"></td>
+                                <td><input type="text" name="nfw"></td>
+                                <td><input type="text" name="nfp"></td>
+                                <td>
+                                    <select name="nfsh">
+                                        <option value="Not Required" data-i18n="val_not_required">Not Required</option>
+                                        <option value="Required" data-i18n="val_required">Required</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="input-group" style="margin-top: 20px;">
+                    <label data-i18n="lbl_comments">Comments</label>
+                    <textarea name="comments" rows="3" style="overflow: hidden;" data-max-lines="3"></textarea>
+                </div>
+            </section>
+
+            <div class="actions">
+                <button type="button" class="btn btn-secondary" onclick="handlePrint()" data-i18n="btn_print">Print /
+                    Save PDF</button>
+                <button type="submit" class="btn btn-primary" data-i18n="btn_submit">Submit Inquiry</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Logic for single-select checkboxes within groups
+        document.querySelectorAll('.single-select-group').forEach(group => {
+            const checkboxes = group.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', function () {
+                    if (this.checked) {
+                        checkboxes.forEach(otherCb => {
+                            if (otherCb !== this) {
+                                otherCb.checked = false;
+                                otherCb.parentElement.classList.remove('selected');
+                            }
+                        });
+                        this.parentElement.classList.add('selected');
+                    } else {
+                        this.parentElement.classList.remove('selected');
+                    }
+                });
+            });
+        });
+
+
+
+        let originalTitle = document.title;
+
+        function handlePrint() {
+            const form = document.getElementById('proposalForm');
+
+            // Check HTML5 validation (required inputs)
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Set dynamic filename for PDF: RFP_MEKA_CompanyName_Date
+            const companyInput = document.querySelector('input[name="company"]');
+            const companyName = companyInput ? companyInput.value.trim() : "";
+            const now = new Date();
+            const dateStr = `${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()}`;
+            originalTitle = document.title;
+            const fileName = companyName ? `RFP_MEKA_${companyName}_${dateStr}` : `RFP_MEKA_${dateStr}`;
+            document.title = fileName;
+
+            // Check required checkbox groups
+            const requiredGroups = document.querySelectorAll('.required-group');
+            for (const group of requiredGroups) {
+                const checked = group.querySelectorAll('input[type="checkbox"]:checked');
+                if (checked.length === 0) {
+                    const groupName = group.getAttribute('data-group-name') || 'Selection Group';
+                    const alertMsg = translations[currentLang]?.alert_select || 'Please select at least one option for: ';
+                    alert(`${alertMsg}${groupName}`);
+                    group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+            }
+
+            // Hide empty rows IN SPECIFIC TABLES (like Required Final Products) for cleaner print
+            document.querySelectorAll('table.hide-if-empty tbody tr').forEach(row => {
+                const inputs = row.querySelectorAll('input, select');
+                if (inputs.length > 0) {
+                    let hasVisibleValue = false;
+                    inputs.forEach(input => {
+                        const val = input.value.trim();
+                        if (val !== "" && val !== "Not Required") {
+                            hasVisibleValue = true;
+                        }
+                    });
+
+                    if (!hasVisibleValue) {
+                        // Special check: don't hide the row if it's the only one or has required field that's somehow missed
+                        const isRequiredRow = row.querySelector('[required]');
+                        if (!isRequiredRow) {
+                            row.classList.add('no-print');
+                        }
+                    }
+                }
+            });
+
+            window.print();
+        }
+
+        // Cleanup after print
+        window.addEventListener('afterprint', () => {
+            if (originalTitle) document.title = originalTitle;
+            document.querySelectorAll('.no-print').forEach(el => el.classList.remove('no-print'));
+        });
+
+        // Form Submission
+        document.getElementById('proposalForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const msg = translations[currentLang]?.alert_submit || 'Form simulation successful.';
+            alert(msg);
+        });
+
+        const translations = {
+            en: {
+                header_main_title: "Request for Proposal",
+                header_sub_title: "Crushing & Screening Plant",
+                sec_customer: "Customer Details",
+                lbl_company: "Company Name",
+                lbl_project_name: "Project Name",
+                lbl_responsible: "Contact Name",
+                lbl_phone: "Phone",
+                lbl_location: "Site Location",
+                lbl_email: "Email Address",
+                lbl_address: "Full Address",
+                sec_scope: "Project Type & Mobility",
+                lbl_project_type: "Project Type",
+                val_new_plant: "New Plant",
+                val_extension: "Plant Extension",
+                val_renewal: "Plant Renewal",
+                lbl_status_needs: "Please describe your current status and needs",
+                lbl_mobility: "Project Mobility",
+                val_stationary: "Stationary",
+                val_mobile: "Mobile-Wheeled",
+                val_skid: "Skid Mounted",
+                sec_feed: "Feed Material Characteristics",
+                val_granite: "Granite",
+                val_limestone: "Limestone",
+                val_gabbro: "Gabbro",
+                val_quartzite: "Quartzite",
+                val_sandstone: "Sandstone",
+                val_dolomite: "Dolomite",
+                val_diabase: "Diabase",
+                val_marble: "Marble",
+                val_andesite: "Andesite",
+                val_coal: "Coal",
+                val_river_gravel: "River Gravel",
+                lbl_other_material: "Other material (Please specify)",
+                th_tech_param: "Technical Parameter",
+                th_value: "Value",
+                td_spec_density: "Specific Density",
+                td_bulk_density: "Bulk Density",
+                td_impact_index: "Impact Work Index (Bond)",
+                td_abrasion_index: "Abrasion Index",
+                td_moisture: "Moisture % by Weight",
+                td_others: "Others",
+                lbl_extraction: "Extraction Method",
+                val_blasting: "Blasting",
+                val_ripped: "Ripped",
+                val_recycling: "Recycling",
+                lbl_condition: "Feed Material Condition",
+                val_wet: "Wet",
+                val_dry: "Dry",
+                val_clayed: "Clayed",
+                val_sticky: "Sticky",
+                lbl_max_feed: "Max Feed Size",
+                lbl_feed_dist: "Feeding Size Distribution",
+                th_mesh: "Hole Size",
+                th_passing: "Passing",
+                sec_final: "Required Final Products",
+                th_prod_name: "Product Name",
+                th_size: "Size",
+                th_capacity: "Capacity",
+                th_percentage: "Percentage",
+                th_shape: "Quality of Product",
+                sub_available: "Please add the values if available",
+                val_prod: "Product",
+                val_natural: "Natural Fine",
+                val_required: "Required",
+                val_not_required: "Not Required",
+                lbl_comments: "Comments",
+                btn_print: "Print / Save PDF",
+                btn_submit: "Submit Inquiry",
+                alert_select: "Please select at least one option for: ",
+                alert_submit: "Form simulation successful.",
+                msg_required: "Please fill out this field.",
+                sub_if_available: "(If available)",
+                sub_specify_size: "Please specify required final product size"
+            },
+            tr: {
+                header_main_title: "Teklif Talebi",
+                header_sub_title: "Kırma ve Eleme Tesisi",
+                sec_customer: "Müşteri Bilgileri",
+                lbl_company: "Şirket Adı",
+                lbl_project_name: "Proje Adı",
+                lbl_responsible: "İlgili Kişi",
+                lbl_phone: "Telefon",
+                lbl_location: "Saha Konumu",
+                lbl_email: "E-posta Adresi",
+                lbl_address: "Tam Adres",
+                sec_scope: "Proje Tipi ve Mobilite",
+                lbl_project_type: "Proje Tipi",
+                val_new_plant: "Yeni Tesis",
+                val_extension: "Tesis Kapasite Artışı",
+                val_renewal: "Tesis Yenileme",
+                lbl_status_needs: "Mevcut durumunuzu ve ihtiyaçlarınızı lütfen açıklayınız",
+                lbl_mobility: "Proje Mobilitesi",
+                val_stationary: "Sabit",
+                val_mobile: "Mobil-Tekerlekli",
+                val_skid: "Kızaklı",
+                sec_feed: "Besleme Malzemesi Özellikleri",
+                val_granite: "Granit",
+                val_limestone: "Kireçtaşı",
+                val_gabbro: "Gabro",
+                val_quartzite: "Kuvarsit",
+                val_sandstone: "Kumtaşı",
+                val_dolomite: "Dolomit",
+                val_diabase: "Diyabaz",
+                val_marble: "Mermer",
+                val_andesite: "Andezit",
+                val_coal: "Kömür",
+                val_river_gravel: "Dere Çakılı",
+                lbl_other_material: "Diğer malzeme (Lütfen belirtiniz)",
+                th_tech_param: "Teknik Parametre",
+                th_value: "Değer",
+                td_spec_density: "Özgül Ağırlık",
+                td_bulk_density: "Yığın Yoğunluğu",
+                td_impact_index: "Darbe İş Endeksi (Bond)",
+                td_abrasion_index: "Aşınma Endeksi",
+                td_moisture: "Ağırlıkça Nem Oranı (%)",
+                td_others: "Diğer",
+                lbl_extraction: "Çıkarma Yöntemi",
+                val_blasting: "Patlatma",
+                val_ripped: "Sökme",
+                val_recycling: "Geri Dönüşüm",
+                lbl_condition: "Besleme Malzemesi Durumu",
+                val_wet: "Islak",
+                val_dry: "Kuru",
+                val_clayed: "Killi",
+                val_sticky: "Yapışkan",
+                lbl_max_feed: "Maksimum Besleme Boyutu",
+                lbl_feed_dist: "Besleme Boyutu Dağılımı",
+                th_mesh: "Elek Aralığı",
+                th_passing: "Elek Altı",
+                sec_final: "Gerekli Nihai Ürünler",
+                th_prod_name: "Ürün Adı",
+                th_size: "Boyut",
+                th_capacity: "Kapasite",
+                th_percentage: "Yüzde",
+                th_shape: "Ürün Kalitesi",
+                sub_available: "Mevcutsa lütfen değerleri ekleyin",
+                val_prod: "Ürün",
+                val_natural: "Doğal İnce",
+                val_required: "Gerekli",
+                val_not_required: "Gerekli Değil",
+                lbl_comments: "Yorumlar / Notlar",
+                btn_print: "Yazdır / PDF Kaydet",
+                btn_submit: "Talebi Gönder",
+                alert_select: "Lütfen en az bir seçenek seçiniz: ",
+                alert_submit: "Form simülasyonu başarılı.",
+                msg_required: "Lütfen bu alanı doldurun.",
+                sub_if_available: "(Mevcutsa)",
+                sub_specify_size: "Lütfen gerekli nihai ürün boyutunu belirtin"
+            },
+            fr: {
+                header_main_title: "Appel d'Offres",
+                header_sub_title: "Installation de Concassage et Criblage",
+                sec_customer: "Détails du Client",
+                lbl_company: "Nom de l'Entreprise",
+                lbl_project_name: "Nom du Projet",
+                lbl_responsible: "Nom du Contact",
+                lbl_phone: "Téléphone",
+                lbl_location: "Emplacement du Site",
+                lbl_email: "Adresse E-mail",
+                lbl_address: "Adresse Complète",
+                sec_scope: "Type de Projet et Mobilité",
+                lbl_project_type: "Type de Projet",
+                val_new_plant: "Nouvelle Installation",
+                val_extension: "Extension d'Installation",
+                val_renewal: "Renouvellement d'Installation",
+                lbl_status_needs: "Veuillez décrire votre situation actuelle et vos besoins",
+                lbl_mobility: "Mobilité du Projet",
+                val_stationary: "Stationnaire",
+                val_mobile: "Mobile-Roues",
+                val_skid: "Sur Patins",
+                sec_feed: "Caractéristiques du Matériau d'Alimentation",
+                val_granite: "Granite",
+                val_limestone: "Calcaire",
+                val_gabbro: "Gabbro",
+                val_quartzite: "Quartzite",
+                val_sandstone: "Grès",
+                val_dolomite: "Dolomie",
+                val_diabase: "Diabase",
+                val_marble: "Marbre",
+                val_andesite: "Andésite",
+                val_coal: "Charbon",
+                val_river_gravel: "Gravier de Rivière",
+                lbl_other_material: "Autre matériau (Veuillez préciser)",
+                th_tech_param: "Paramètre Technique",
+                th_value: "Valeur",
+                td_spec_density: "Densité Spécifique",
+                td_bulk_density: "Densité Apparente",
+                td_impact_index: "Indice de Travail d'Impact (Bond)",
+                td_abrasion_index: "Indice d'Abrasion",
+                td_moisture: "% d'Humidité en Poids",
+                td_others: "Autres",
+                lbl_extraction: "Méthode d'Extraction",
+                val_blasting: "Sautage",
+                val_ripped: "Ripper",
+                val_recycling: "Recyclage",
+                lbl_condition: "État du Matériau d'Alimentation",
+                val_wet: "Humide",
+                val_dry: "Sec",
+                val_clayed: "Argileux",
+                val_sticky: "Collant",
+                lbl_max_feed: "Taille Max d'Alimentation",
+                lbl_feed_dist: "Distribution de la Taille d'Alimentation",
+                th_mesh: "Taille de Maille",
+                th_passing: "Passant",
+                sec_final: "Produits Finaux Requis",
+                th_prod_name: "Nom du Produit",
+                th_size: "Taille",
+                th_capacity: "Capacité",
+                th_percentage: "Pourcentage",
+                th_shape: "Qualité du Produit",
+                sub_available: "Veuillez ajouter les valeurs si disponibles",
+                val_prod: "Produit",
+                val_natural: "Fin Naturel",
+                val_required: "Requis",
+                val_not_required: "Non Requis",
+                lbl_comments: "Commentaires",
+                btn_print: "Imprimer / Enregistrer PDF",
+                btn_submit: "Envoyer la Demande",
+                alert_select: "Veuillez sélectionner au moins une option pour: ",
+                alert_submit: "Simulation de formulaire réussie.",
+                msg_required: "Veuillez remplir ce champ.",
+                sub_if_available: "(Si disponible)",
+                sub_specify_size: "Veuillez spécifier la taille du produit final requis"
+            },
+            es: {
+                header_main_title: "Solicitud de Propuesta",
+                header_sub_title: "Planta de Trituración y Clasificación",
+                sec_customer: "Detalles del Cliente",
+                lbl_company: "Nombre de la Empresa",
+                lbl_project_name: "Nombre del Proyecto",
+                lbl_responsible: "Nombre de Contacto",
+                lbl_phone: "Teléfono",
+                lbl_location: "Ubicación del Sitio",
+                lbl_email: "Correo Electrónico",
+                lbl_address: "Dirección Completa",
+                sec_scope: "Tipo de Proyecto y Movilidad",
+                lbl_project_type: "Tipo de Proyecto",
+                val_new_plant: "Nueva Planta",
+                val_extension: "Extensión de Planta",
+                val_renewal: "Renovación de Planta",
+                lbl_status_needs: "Por favor, describa su situación actual y sus necesidades",
+                lbl_mobility: "Movilidad del Proyecto",
+                val_stationary: "Estacionaria",
+                val_mobile: "Móvil-Ruedas",
+                val_skid: "Montada sobre Skids",
+                sec_feed: "Características del Material de Alimentación",
+                val_granite: "Granito",
+                val_limestone: "Caliza",
+                val_gabbro: "Gabro",
+                val_quartzite: "Cuarcita",
+                val_sandstone: "Arenisca",
+                val_dolomite: "Dolomita",
+                val_diabase: "Diabasa",
+                val_marble: "Mármol",
+                val_andesite: "Andesita",
+                val_coal: "Carbón",
+                val_river_gravel: "Grava de Río",
+                lbl_other_material: "Otro material (Por favor especifique)",
+                th_tech_param: "Parámetro Técnico",
+                th_value: "Valor",
+                td_spec_density: "Densidad Específica",
+                td_bulk_density: "Densidad Aparente",
+                td_impact_index: "Índice de Trabajo de Impacto (Bond)",
+                td_abrasion_index: "Índice de Abrasión",
+                td_moisture: "% de Humedad por Peso",
+                td_others: "Otros",
+                lbl_extraction: "Método de Extracción",
+                val_blasting: "Voladura",
+                val_ripped: "Ripper",
+                val_recycling: "Reciclaje",
+                lbl_condition: "Estado del Material de Alimentación",
+                val_wet: "Húmedo",
+                val_dry: "Seco",
+                val_clayed: "Arcilloso",
+                val_sticky: "Pegajoso",
+                lbl_max_feed: "Tamaño Máximo de Alimentación",
+                lbl_feed_dist: "Distribución del Tamaño de Alimentación",
+                th_mesh: "Tamaño de Malla",
+                th_passing: "Pasante",
+                sec_final: "Productos Finales Requeridos",
+                th_prod_name: "Nombre del Producto",
+                th_size: "Tamaño",
+                th_capacity: "Capacidad",
+                th_percentage: "Porcentaje",
+                th_shape: "Calidad del Producto",
+                sub_available: "Por favor agregue los valores si están disponibles",
+                val_prod: "Producto",
+                val_natural: "Fino Natural",
+                val_required: "Requerido",
+                val_not_required: "No Requerido",
+                lbl_comments: "Comentarios",
+                btn_print: "Imprimir / Guardar PDF",
+                btn_submit: "Enviar Solicitud",
+                alert_select: "Por favor seleccione al menos una opción para: ",
+                alert_submit: "Simulación de formulario exitosa.",
+                msg_required: "Por favor complete este campo.",
+                sub_if_available: "(Si está disponible)",
+                sub_specify_size: "Por favor especifique el tamaño del producto final requerido"
+            },
+            ar: {
+                header_main_title: "طلب عرض سعر",
+                header_sub_title: "محطة التكسير والغربلة",
+                sec_customer: "تفاصيل العميل",
+                lbl_company: "اسم الشركة",
+                lbl_project_name: "اسم المشروع",
+                lbl_responsible: "اسم جهة الاتصال",
+                lbl_phone: "الهاتف",
+                lbl_location: "موقع الموقع",
+                lbl_email: "البريد الإلكتروني",
+                lbl_address: "العنوان الكامل",
+                sec_scope: "نوع المشروع والتنقل",
+                lbl_project_type: "نوع المشروع",
+                val_new_plant: "محطة جديدة",
+                val_extension: "توسعة المحطة",
+                val_renewal: "تجديد المحطة",
+                lbl_status_needs: "يرجى وصف وضعك الحالي واحتياجاتك",
+                lbl_mobility: "نقل المشروع",
+                val_stationary: "ثابت",
+                val_mobile: "متنقل على عجلات",
+                val_skid: "مركب على قاعدة",
+                sec_feed: "خصائص مادة التغذية",
+                val_granite: "جرانيت",
+                val_limestone: "حجر جيري",
+                val_gabbro: "غابرو",
+                val_quartzite: "كوارتزيت",
+                val_sandstone: "حجر رملي",
+                val_dolomite: "دولوميت",
+                val_diabase: "دياباز",
+                val_marble: "رخام",
+                val_andesite: "آنديزيت",
+                val_coal: "فحم",
+                val_river_gravel: "حصى النهر",
+                lbl_other_material: "مادة أخرى (يرجى التحديد)",
+                th_tech_param: "المعلمة التقنية",
+                th_value: "القيمة",
+                td_spec_density: "الكثافة النوعية",
+                td_bulk_density: "الكثافة الظاهرية",
+                td_impact_index: "مؤشر عمل التأثير (بوند)",
+                td_abrasion_index: "مؤشر الكشط",
+                td_moisture: "نسبة الرطوبة بالوزن",
+                td_others: "أخرى",
+                lbl_extraction: "طريقة الاستخراج",
+                val_blasting: "التفجير",
+                val_ripped: "التمزيق",
+                val_recycling: "إعادة التدوير",
+                lbl_condition: "حالة مادة التغذية",
+                val_wet: "رطب",
+                val_dry: "جاف",
+                val_clayed: "طيني",
+                val_sticky: "لزج",
+                lbl_max_feed: "أقصى حجم للتغذية",
+                lbl_feed_dist: "توزيع حجم التغذية",
+                th_mesh: "فتحة المنخل (Hole Size)",
+                th_passing: "المار (النسبة المئوية)",
+                sec_final: "المنتجات النهائية المطلوبة",
+                th_prod_name: "اسم المنتج",
+                th_size: "الحجم",
+                th_capacity: "السعة",
+                th_percentage: "النسبة المئوية",
+                th_shape: "جودة المنتج",
+                sub_available: "يرجى إضافة القيم إذا كانت متوفرة",
+                val_prod: "منتج",
+                val_natural: "ناعم طبيعي",
+                val_required: "مطلوب",
+                val_not_required: "غير مطلوب",
+                lbl_comments: "ملاحظات",
+                btn_print: "طباعة / حفظ PDF",
+                btn_submit: "إرسال الطلب",
+                alert_select: "يرجى اختيار خيار واحد على الأقل لـ: ",
+                alert_submit: "تمت محاكاة النموذج بنجاح.",
+                msg_required: "يرجى ملء هذا الحقل.",
+                sub_if_available: "(إذا توفر)",
+                sub_specify_size: "يرجى تحديد حجم المنتج النهائي المطلوب"
+            }
+        };
+
+        let isSubmitting = false;
+
+        let currentLang = 'en';
+        let currentUnitSystem = 'metric';
+
+        const units = {
+            metric: {
+                mm: '(mm)',
+                density: '(t/m³)',
+                capacity: '(mtph)'
+            },
+            imperial: {
+                mm: '(inch)',
+                density: '(lb/ft³)',
+                capacity: '(stph)'
+            }
+        };
+
+        function setUnitSystem(system) {
+            currentUnitSystem = system;
+            document.querySelectorAll('.unit-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${system}'`));
+            });
+            document.querySelectorAll('.unit[data-unit]').forEach(el => {
+                const unitType = el.getAttribute('data-unit');
+                if (units[system][unitType]) {
+                    el.textContent = units[system][unitType];
+                }
+            });
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${lang}'`));
+            });
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    let foundText = false;
+                    el.childNodes.forEach(node => {
+                        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") {
+                            node.textContent = translations[lang][key];
+                            foundText = true;
+                        }
+                    });
+                    if (!foundText && el.children.length === 0) {
+                        el.textContent = translations[lang][key];
+                    }
+                }
+            });
+            updateValidationMessages(lang);
+        }
+
+        function updateValidationMessages(lang) {
+            const msg = translations[lang]?.msg_required || "";
+            document.querySelectorAll('input[required], textarea[required], select[required]').forEach(el => {
+                if (el.value === "") {
+                    el.setCustomValidity(msg);
+                } else {
+                    el.setCustomValidity("");
+                }
+            });
+        }
+
+        document.addEventListener('input', (e) => {
+            if (e.target.hasAttribute('required')) {
+                e.target.setCustomValidity("");
+            }
+
+            // Limit lines in specific textareas
+            if (e.target.tagName === 'TEXTAREA' && e.target.hasAttribute('data-max-lines')) {
+                const maxLines = parseInt(e.target.getAttribute('data-max-lines'));
+                const lines = e.target.value.split('\n');
+                if (lines.length > maxLines) {
+                    e.target.value = lines.slice(0, maxLines).join('\n');
+                }
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'TEXTAREA' && e.target.hasAttribute('data-max-lines')) {
+                const maxLines = parseInt(e.target.getAttribute('data-max-lines'));
+                const lines = e.target.value.split('\n');
+                if (e.key === 'Enter' && lines.length >= maxLines) {
+                    e.preventDefault();
+                }
+            }
+        });
+
+        document.getElementById('proposalForm').addEventListener('submit', function (e) {
+            isSubmitting = true;
+            // The existing submit listener on line 1161 handles the alert
+            // Here we just ensure isSubmitting is true.
+            // Actually, I replaced the original one too. Let's make it consistent.
+        });
+
+        window.addEventListener('beforeunload', function (e) {
+            if (isSubmitting) return;
+            const form = document.getElementById('proposalForm');
+            if (!form) return;
+            const inputs = form.querySelectorAll('input, textarea, select');
+            let isDirty = false;
+            for (const input of inputs) {
+                if (input.type === 'checkbox' || input.type === 'radio') {
+                    if (input.checked) {
+                        isDirty = true;
+                        break;
+                    }
+                } else if (input.type !== 'submit' && input.type !== 'button') {
+                    if (input.value.trim() !== "") {
+                        isDirty = true;
+                        break;
+                    }
+                }
+            }
+            if (isDirty) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        setLanguage('en');
+        setUnitSystem('metric');
+    </script>
+</body>
+
+</html>
